@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: 'JetBrains Mono Nerd Font';
-  src: url('https://cdn.glitch.global/a46b1d1d-3d00-4c20-ac15-2bc586a40901/JetBrainsMonoNerdFontMono-Regular.ttf?v=1731883385124') format('truetype');
+  src: url('./fonts/JetBrainsMonoNerdFontMono-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
