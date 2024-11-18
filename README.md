@@ -1,4 +1,4 @@
 # Casnections
 
-a lil fun game i made for my other half. yipeee
+this is a clone of the New York Times game connections I made for my pookie
 
