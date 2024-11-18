@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casnections</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- "Only 1 Away" Prompt -->
+    <div id="one-away-prompt" class="one-away-prompt hidden">Only 1 away!</div>
+
+    <!-- Game Title -->
+    <h1 class="title">🥰casnections😙</h1>
+
+    <!-- Mistakes Remaining -->
+    <div id="mistakes-remaining" class="mistakes-container">
+      <span class="mistake-bubble"></span>
+      <span class="mistake-bubble"></span>
+      <span class="mistake-bubble"></span>
+      <span class="mistake-bubble"></span>
+    </div>
+    
+    <div id="end-game-message" class="end-game-message" style="display: none;"></div>
+    
+    <!-- Correct Groups -->
+    <div id="correct-groups" class="correct-groups"></div>
+
+    <!-- Game Grid -->
+    <div id="grid" class="game-grid"></div>
+
+    <!-- Game Control Buttons -->
+    <div class="game-controls">
+      <button id="submit" class="game-button">submit</button>
+      <button id="reset" class="game-button">reset game</button>
+      <button id="shuffle" class="game-button">shuffle</button>
+    </div>
+  </div>
+</body>
+</html>
