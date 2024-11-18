@@ -1,0 +1,242 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono Nerd Font';
+  src: url('https://cdn.glitch.global/a46b1d1d-3d00-4c20-ac15-2bc586a40901/JetBrainsMonoNerdFontMono-Regular.ttf?v=1731883385124') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'JetBrains Mono Nerd Font', monospace;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px;
+  color: #333;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* "Only 1 Away" Prompt */
+.one-away-prompt {
+  background-color: #ffeb3b;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: none;
+}
+
+.one-away-prompt.visible {
+  display: block;
+}
+
+/* Title */
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+/* Mistakes Remaining */
+.mistakes-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.mistake-bubble {
+  width: 20px;
+  height: 20px;
+  background-color: #007aff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+.mistake-bubble.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Correct Groups Container */
+.correct-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+/* Correct Group Styling */
+.correct-group {
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1rem;
+  background-color: #007aff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.correct-group:hover {
+  transform: scale(1.02);
+}
+
+.correct-group div {
+  margin-bottom: 5px;
+}
+
+.correct-group div:first-child {
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.correct-group div:last-child {
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Grid */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 10px;
+}
+
+.word {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  padding: 5px 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  aspect-ratio: 1 / 1;
+  min-height: 70px;
+}
+
+.word.long-word {
+  font-size: clamp(0.5rem, 1vw, 0.8rem);
+  letter-spacing: -0.02em;
+}
+
+.word:hover {
+  background: #eaeaea;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.word.selected {
+  background: #cce7ff;
+  color: #004a8f;
+  border: none;
+  transform: scale(1.02);
+}
+
+/* Buttons */
+.game-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.game-button {
+  font-family: 'JetBrains Mono Nerd Font', monospace;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  border: none;
+  background: #007aff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 122, 255, 0.15);
+}
+
+.game-button:hover {
+  background: #005bb5;
+  transform: translateY(-1px);
+}
+
+.game-button:active {
+  background: #004a99;
+}
+
+.end-game-message {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #FFB6C1;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 15px;
+  }
+
+  .game-grid {
+    gap: 10px;
+    padding: 8px;
+  }
+
+  .word {
+    font-size: 1rem;
+    padding: 5px 10px;
+    min-height: 80px;
+  }
+
+  .word.long-word {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .game-button {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}
