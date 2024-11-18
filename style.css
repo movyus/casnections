@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: 'JetBrains Mono Nerd Font';
-  src: url('./fonts/JetBrainsMonoNerdFontMono-Regular.ttf') format('truetype');
+  src: url('JetBrainsMonoNerdFontMono-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
